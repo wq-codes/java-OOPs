@@ -34,7 +34,7 @@ class GradeBook{
              
 }
 
-   public class Student{
+   public  class Student{
 
    public static void main(String[] args) {
        int Grade;
@@ -46,18 +46,22 @@ class GradeBook{
          GradeBook gb=new GradeBook(students,subjects);
               Scanner sc=new Scanner(System.in);
         
+       
+          // Inputting each Student's grades
         for(int i=0; i<students.length; i++){
         
             for(int j=0; j<subjects.length; j++){
                 
-               System.out.println("Enter Student Grades:");
+               System.out.print("Enter Grades of Subject "+(j+1)+":");
                    Grade= sc.nextInt();
                    
                  gb.Add(i,j,Grade);  
             }        
                 
     }
-            double Average=0;    //claculating Average
+
+       // Calculating Average of specific Student across all subjects  
+            double Average=0;    
             for(int i=0; i<1; i++){
         
             for(int j=0; j<subjects.length; j++){
