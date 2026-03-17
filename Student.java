@@ -57,7 +57,7 @@ class GradeBook{
             }        
                 
     }
-            double Average=0;
+            double Average=0;    //claculating Average
             for(int i=0; i<1; i++){
         
             for(int j=0; j<subjects.length; j++){
