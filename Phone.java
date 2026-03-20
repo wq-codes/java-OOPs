@@ -25,8 +25,7 @@ static int count=0;
            System.out.println("Invalid price");
       
      }
-
-   }
+}
 
 //getter
    double getprice(){
