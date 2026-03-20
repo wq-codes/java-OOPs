@@ -4,7 +4,7 @@ public class Phone{
 static int count=0;
    String brand;
     String model;
-     double price;
+    private  double price;
      Battery battery;
   
 
@@ -17,6 +17,26 @@ static int count=0;
         battery=new Battery();
     count++;
 }    
+//setter 
+   void setprice(double price){
+     if(price>0){
+        this.price=price;          
+     } else{
+           System.out.println("Invalid price");
+      
+     }
+
+   }
+
+//getter
+   double getprice(){
+
+    return price;
+
+   }
+
+
+
 
   //parameterized Constructor
 Phone(String model,String brand,double price,Battery battery){
@@ -35,14 +55,22 @@ Phone(String model,String brand,double price,Battery battery){
         //Deep copy Constructor
          Phone(Phone other){
            this.brand=other.brand;
-          this.price=other.price;
             this.model=other.model;
+
+        if(other.price>0){
+           this.price=other.price;
+        }  else {
+            System.out.println("Invalid");
+        }
 
            this.battery=new Battery(other.battery);          
            count++;
-}        @Override
+}      
+
+
+  @Override
      public String toString(){
-         return "Brand:"+brand+"\nModel:"+model+"\nPrice:"+price+"\nBattery:"+battery;             
+         return   "          Phone Information:"+"\nBrand:"+brand+"\nModel:"+model+"\nPrice:"+price+"\n"+battery;             
 
 
 }

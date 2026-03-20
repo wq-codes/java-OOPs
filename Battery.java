@@ -25,7 +25,7 @@ public class Battery{
    
     @Override
   public String toString(){
-    return  "BatteryInfo"+"\nCapacity:"+capacity+"\nType:"+type;
+    return  "BatteryInfo:"+"\n  Capacity:"+capacity+"\n  Type:"+type;
          
 }  
 
