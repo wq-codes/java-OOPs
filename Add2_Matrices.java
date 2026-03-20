@@ -1,6 +1,6 @@
 import java.util.Scanner;
 class Matrices{
-  
+  //Inputting Both Matrix
   public static void input(Scanner sc,double MatrixElements[][]){
     
        for (int i=0; i<MatrixElements.length; i++){
@@ -9,24 +9,34 @@ class Matrices{
                
                    
                }
-            System.out.println();    
+               
     }
     
   }
   
-   public static double[][] AddMatrix(double MatrixElement1[][],double MatrixElement2[][]){
+   public static void AddMatrix(double MatrixElement1[][],double MatrixElement2[][]){
      
      
-            double Resultant_Matrix[][]=new double[3][3];
+           
                for (int i=0; i<MatrixElement1.length; i++){
                for (int j=0; j<MatrixElement1[i].length; j++){
-                    Resultant_Matrix[i][j]=   MatrixElement1[i][j] + MatrixElement2[i][j];  
+                    System.out.print( MatrixElement1[i][j] + MatrixElement2[i][j]+" ");  
                  }
-        
+           System.out.println();
    }
-             return Resultant_Matrix;
                     
-}    }
+}      
+    //Printing the Inputted Matrix
+      public static void output(double MatrixElement[][]){
+    for (int i=0; i<MatrixElement.length; i++){
+       for(int j=0; j<MatrixElement[i].length; j++){
+            System.out.print(MatrixElement[i][j]+" ");
+    }  
+        System.out.println();
+    }
+
+      }
+        }
 
 public class Add2_Matrices{
  
@@ -37,7 +47,7 @@ public class Add2_Matrices{
         double [][] MatrixElement1=new double [3][3];
          double [][] MatrixElement2=new double [3][3];
          Scanner sc=new Scanner(System.in);
-      System.out.println("Want to enter 1 Matrix or 2nd:??");
+      System.out.println("Want to enter 1 Matrix or 2nd (0 to exit)?");
          int n=sc.nextInt(); 
   
     while (n!=0){
@@ -59,23 +69,32 @@ public class Add2_Matrices{
     break;
 }
       
-     System.out.println("Want to enter 1 Matrix or 2nd:??");
+     System.out.println("Want to enter 1 Matrix or 2nd (0 to exit)?");
           n=sc.nextInt(); 
 
 
     }
   
-   double[][] Resultant_Matrix= Matrices.AddMatrix(MatrixElement1,MatrixElement2);  
+     
+
+    Matrices.output(MatrixElement1);
+    System.out.println("     +");
+  Matrices.output(MatrixElement2);
+
+  System.out.println("Resultant Matrix is:");
+    
+    //Adding Both Matrices
+    Matrices.AddMatrix(MatrixElement1,MatrixElement2); 
+    
+    // System.out.println("Resultant Matrix:");
   
-    System.out.println("Resultant Matrix:");
-  
-      for(int i=0; i<Resultant_Matrix.length; i++){
-    for(int j=0; j<Resultant_Matrix[i].length; j++){     
+    //   for(int i=0; i<Resultant_Matrix.length; i++){
+    // for(int j=0; j<Resultant_Matrix[i].length; j++){     
          
-             System.out.print(Resultant_Matrix[i][j]+" ");
-    }
-                System.out.println();
-      }
+    //          System.out.print(Resultant_Matrix[i][j]+" ");
+    // }
+    //             System.out.println();
+    //   }
   
   }  
 }
