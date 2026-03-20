@@ -11,9 +11,10 @@ public class Main{
 
 System.out.println(P1);
 
-//Testing Deep copy Constructor
+//Testing Deep copy Constructor 
          P2.setprice(500000.00);
         P2.battery.type="Aluminium";
+
         
   System.out.println(P2); 
      System.out.println(); 
