@@ -68,6 +68,6 @@ public class Exam {
 
 // 1. Create 3 student objects and display their information.
 // 2. Add a static variable courseName.
-// 3. Add a final variable PASSING_MARKS.
+// 3. Add a final(constant) variable PASSING_MARKS.
 // 4. Create a static method to change university name.
 // 5. Observe the difference between static and non-static members.
