@@ -17,12 +17,7 @@ abstract class Media implements playable, Comparable<Media> {
         this.releaseYear = releaseYear;
         this.artist = artist;
     }
-
   
-
-       
-
-   
   //getters
           public Artist getArtist(){
               return artist;
@@ -42,14 +37,20 @@ abstract class Media implements playable, Comparable<Media> {
     
        @Override 
        public int compareTo(Media other){
-    
-      if (this.getTitle().compareToIgnoreCase(other.getTitle())==0){
+      int result= this.gettitle().comparetoignorecase(other.gettitle())
 
-                return   this.getReleaseYear()-(other.getReleaseYear());
-      } 
-
-              else 
-            return this.getTitle().compareToIgnoreCase(other.getTitle());
+   if (result==0){
+    if (this.getReleaseyear()> other.getReleaseyear()){
+        return 1 //mean swap it.....---> here other is older year so it should come first
+  } 
+         if (this.getReleaseyear()<other.getReleaseyear()){
+               return -1;  //mean dont swap..  
+}
+              if (this.getReleaseyear()==other.getReleaseyear()){
+               return 0;
+}           else  
+             return result;
+}
 }
         @Override
        public double getDurationSeconds(){
