@@ -51,6 +51,4 @@ class Artist {
         return  "Name:"+getName()+"\nCountry:"+getCountry()+"\nfollower Count:"+getFollowerCount();
     }
      
-    
-
 }
