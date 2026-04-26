@@ -13,9 +13,10 @@ class Artist {
 
 
     public void addfollowers(long delta){
-
+      if(delta>0){
            this.followerCount+=delta;
-
+    }   else 
+           System.out.prinln("Invalid");
 
     }
 
@@ -23,18 +24,14 @@ class Artist {
         return  followerCount;
     }
     
-
     public String getName() {
         return Name;
     }
 
-    
-
     public String getCountry() {
         return country;
     }
-
-
+   
    @Override
    public boolean equals(Object obj){
      if (this==obj)
