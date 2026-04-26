@@ -59,5 +59,19 @@ abstract class Media implements playable, Comparable<Media> {
 
       public  abstract void play();
 
+@Override 
+    public String toString(){
+  return "Title:"+getTitle()+" Duration:"+obtdurationSeconds()+"  Release Year:"+getReleaseyear()+"  Artist:"+getArtist();
+
+
+    }
+
+
+
+
+
+
+  
+
 
 }
