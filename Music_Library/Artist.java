@@ -37,7 +37,9 @@ class Artist {
 
    @Override
    public boolean equals(Object obj){
-    if (obj instanceof Artist){
+     if (this==obj)
+         return true;
+      if (obj instanceof Artist){
         Artist other= (Artist) obj;
 
     
