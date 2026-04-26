@@ -11,7 +11,7 @@ abstract class Media implements playable, Comparable<Media> {
         return artist;
     }
 
-    public Media(String title, double durationSeconds, int releaseYear, Artist artist) {
+    public Media(String title, double durationSeconds, int releaseYear) {
         this.title = title;
         this.durationSeconds = durationSeconds;
         this.releaseYear = releaseYear;
