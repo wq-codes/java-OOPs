@@ -19,9 +19,8 @@ abstract class Media implements playable, Comparable<Media> {
     }
   
   //getters
-          public Artist getArtist(){
-              return artist;
-          }
+         
+          
     public double obtdurationSeconds() {
         return durationSeconds;
     }
@@ -37,16 +36,16 @@ abstract class Media implements playable, Comparable<Media> {
     
        @Override 
        public int compareTo(Media other){
-      int result= this.gettitle().comparetoignorecase(other.gettitle())
+      int result= this.getTitle().compareToIgnoreCase(other.getTitle());
 
    if (result==0){
-    if (this.getReleaseyear()> other.getReleaseyear()){
-        return 1 //mean swap it.....---> here other is older year so it should come first
+    if (this.getReleaseYear()> other.getReleaseYear()){
+        return 1; //mean swap it.....---> here other is older year so it should come first
   } 
-         if (this.getReleaseyear()<other.getReleaseyear()){
+         if (this.getReleaseYear()<other.getReleaseYear()){
                return -1;  //mean dont swap..  
 }
-              if (this.getReleaseyear()==other.getReleaseyear()){
+              if (this.getReleaseYear()==other.getReleaseYear()){
                return 0;
 }           else  
              return result;
@@ -61,7 +60,7 @@ abstract class Media implements playable, Comparable<Media> {
 
 @Override 
     public String toString(){
-  return "Title:"+getTitle()+" Duration:"+obtdurationSeconds()+"  Release Year:"+getReleaseyear()+"  Artist:"+getArtist();
+  return "Title:"+getTitle()+" Duration:"+obtdurationSeconds()+"  Release Year:"+getReleaseYear()+"  Artist:"+getArtist();
 
 
     }
