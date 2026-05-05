@@ -18,7 +18,22 @@ class Song extends Media{
     public String getGenre() {
         return genre;
     }
+           public boolean equals(Object obj){
+               if(this==obj)
+                return true;
+          
+          if(!(obj instanceof Song))
+                return false;
 
+   else {
+     Song other= (Song) obj;
+       return this.getGenre().equals(other.getGenre());
+   }
+          
+               
+
+
+           }
    
 
 }

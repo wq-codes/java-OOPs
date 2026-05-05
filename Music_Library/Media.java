@@ -11,10 +11,19 @@ abstract class Media implements playable, Comparable<Media> {
         return artist;
     }
 
-    public Media(String title, double durationSeconds, int releaseYear) {
+    public Media(String title, double durationSeconds, int releaseYear,Artist artist) {
+           if(title==null){
+            System.out.println("Invalid");
+           }  else {
         this.title = title;
-        this.durationSeconds = durationSeconds;
+               }    this.durationSeconds = durationSeconds;
+     
+        if(releaseYear > 1877 && releaseYear<2100){
         this.releaseYear = releaseYear;
+        }  else {
+            System.out.println("Invalid");
+        }
+
         this.artist = artist;
     }
   
@@ -39,18 +48,17 @@ abstract class Media implements playable, Comparable<Media> {
       int result= this.getTitle().compareToIgnoreCase(other.getTitle());
 
    if (result==0){
-    if (this.getReleaseYear()> other.getReleaseYear()){
+    if (this.getReleaseYear()> other.getReleaseYear())
         return 1; //mean swap it.....---> here other is older year so it should come first
-  } 
-         if (this.getReleaseYear()<other.getReleaseYear()){
+ 
+        else if (this.getReleaseYear()<other.getReleaseYear())
                return -1;  //mean dont swap..  
-}
-              if (this.getReleaseYear()==other.getReleaseYear()){
+
+             else 
                return 0;
-}           else  
+      }         
              return result;
-}
-}
+             }
         @Override
        public double getDurationSeconds(){
                return  obtdurationSeconds();

@@ -16,7 +16,7 @@ class Artist {
       if(delta>0){
            this.followerCount+=delta;
     }   else 
-           System.out.prinln("Invalid");
+           System.out.println("Invalid");
 
     }
 
