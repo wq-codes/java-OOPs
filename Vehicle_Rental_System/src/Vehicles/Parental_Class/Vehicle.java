@@ -1,14 +1,15 @@
+package Vehicles.Parental_Class;
 
-package Java_OOP.Vehical_Rental_System;
+import Vehicles.Interface.Insurable;
 
-abstract class Vehicle {
+public abstract class Vehicle {
     private String brand;
     private int speed;
     private int rentPerDay;
     private int days;
 
     public Vehicle() {
-        // default
+        // defult constructor
     }
 
     public Vehicle(String brand, int rentPerDay, int speed) {
@@ -17,18 +18,7 @@ abstract class Vehicle {
         this.speed = speed;
     }
 
-    public interface Insurable {
-        double getInsuranceCost();
-    }
-
-    public void setBrand(String brand) {
-        if (brand == null || brand.trim().isEmpty()) {
-            System.out.println("Invalid");
-        } else {
-            this.brand = brand;
-        }
-    }
-
+    // getter & setters
     public void setSpeed(int speed) {
         if (speed < 0) {
             System.out.println("invalid");
@@ -53,12 +43,20 @@ abstract class Vehicle {
         return days;
     }
 
+    public void setBrand(String brand) {
+        if (brand == null || brand.trim().isEmpty()) {
+            System.out.println("Invalid");
+        } else {
+            this.brand = brand;
+        }
+    }
+
     public String getBrand() {
         return brand;
     }
 
     public void setRentPerDay(int rentPerDay) {
-        if (rentPerDay == 0) {
+        if (rentPerDay <= 0) {
             System.out.println("Invalid");
         } else {
             this.rentPerDay = rentPerDay;
@@ -69,13 +67,11 @@ abstract class Vehicle {
         return rentPerDay;
     }
 
-    public void displyInfo() {
+    public void displayInfo() {
         System.out.println("\nBrand: " + brand);
         System.out.println("Speed: " + speed + " km/h");
         System.out.println("Rent per day:" + rentPerDay);
-        this.calcRent(getDays());
-    }
 
-    abstract public void calcRent(int days);
+    }
 
 }

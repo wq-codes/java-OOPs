@@ -1,43 +1,42 @@
-package Java_OOP.Vehical_Rental_System;
-
 import java.util.Scanner;
-
-import Java_OOP.Vehical_Rental_System.Vehicle.Insurable;
+import Vehicles.*;
+import Vehicles.Interface.Insurable;
+import Vehicles.Parental_Class.Vehicle;
+import Vehicles.Services.RentalService;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Vehicle car = new Car("Honda", 3200, 170);
-        car.setDays(13);
+        Insurable car = new Car("Honda", 3200, 170);
+        Insurable bike = new Bike("United", 700, 70);
+        Insurable suv = new SUV("Toyota", 5000, 180);
 
-        // car.calcRent(10);
-        // car.displyInfo();
-
-        System.out.println("Enter brand, Rent per day and speed: ");
-        Vehicle Suv = new SUV(sc.nextLine(), sc.nextInt(), sc.nextInt());
-        Suv.setDays(16);
-        // Suv.calcRent(13);
-        // Suv.displyInfo();
-
-        Vehicle bike = new Bike("United", 700, 70);
-        bike.setDays(8);
-        // bike.calcRent(8);
-        // bike.displyInfo();
-
-        Vehicle[] autos = new Vehicle[3];
+        Insurable[] autos = new Insurable[3];
         autos[0] = car;
-        autos[1] = Suv;
+        autos[1] = suv;
         autos[2] = bike;
 
-        for (Vehicle vehicle : autos) {
+        System.out.println("================DI Demo==============");
+        for (Insurable insurable_vehicle : autos) {// check all autos array if it is Vehicle then iot will create an
+                                                   // object of service and use method of that this is DI
+            if (insurable_vehicle instanceof Vehicle v) {
 
-            vehicle.displyInfo();
+                RentalService service = new RentalService(v);// pass the object to constructor, this is constructor DI
+                service.rentVehicle_details();
+                System.out.println("---------------------");
+            }
+        }
+        System.out.println("================ Insurance Cost & Display Info ==============");
+        for (Insurable vehicle : autos) {
+
+            vehicle.display();
             if (vehicle instanceof Insurable) {
                 Insurable i = (Insurable) vehicle;
-                System.out.println("Submit insurance amount: " + i.getInsuranceCost());
+                i.display();
+                System.out.println("Submit insurance amount: " + i.calculateInsurance());
             }
-            // vehicle.calcRent(sc.nextInt());
+
         }
 
         sc.close();
